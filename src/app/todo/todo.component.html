@@ -1,0 +1,39 @@
+<div class="col-xs-12 offset-5">
+<h1>Todo List</h1>
+</div>
+<div class="alert alert-warning"*ngIf='message'>
+  {{message}}
+</div>
+
+<div class="container">
+ 
+
+    <table class="table table-hover">
+        
+        <tr>
+          <th>id</th>
+          <th>description</th>
+          <th>Completion Status</th>
+          <th>Date</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+        <tbody>
+        <tr *ngFor="let item of todos">
+          <td>{{item.id}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.done}}</td>
+          <td>{{item.targetDate | date | uppercase}}</td>
+          <td><button class="btn btn-success" (click)="onUpdate(item.id)">Update</button></td>
+        
+          <td><button class="btn btn-warning" (click)="onDelete(item.id)">Delete</button> </td>
+        </tr>
+      </tbody>
+      </table>
+
+      <div class="row">
+        <button class="btn btn-info" (click)="onCreateTodo()">Create Todo</button>
+      
+      </div>
+
+</div>

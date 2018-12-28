@@ -1,0 +1,12 @@
+<h1>Welcome!!</h1>
+
+<div class="container">
+
+    Click here to manage your <a [routerLink]="['/todolist']">todolist</a>
+    <br>
+    click to get customize message
+    <br><button class="btn btn-primary" (click)="onCustomClickWithPathVariable()">Custom message</button>
+    <div *ngIf="msg">
+        Value from Hello Bean: {{msg}}
+    </div>
+</div>
